@@ -1,0 +1,302 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f8fb;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 28px;
+  color: #1a2a38;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #2d3e50;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border-color: #0077cc;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.primary-btn {
+  background-color: #0077cc;
+  color: white;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: #005fa3;
+}
+
+.secondary-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  width: 100%;
+}
+
+.secondary-btn:hover {
+  background-color: #e2e2e2;
+}
+
+.info p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.section {
+  margin-top: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Navigation buttons for modifications */
+.modification-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.modification-buttons a {
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.modification-buttons a:hover {
+  background-color: #005fa3;
+}
+
+.modification-buttons a.active {
+  background-color: #005fa3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    font-size: 14px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .modification-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .modification-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.search-form {
+  text-align: center;
+  margin-top: 30vh;
+  margin-bottom: 30px;
+}
+
+.search-form input[type="text"] {
+  width: 70%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-right: 10px;
+}
+
+.search-form button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0077cc;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: #005fa3;
+}
+
+/* seat selection */
+.seat-map-container-small {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.aircraft-layout-small {
+  /* Adjust layout as needed */
+}
+
+.cabin-class-small {
+  margin-bottom: 10px;
+}
+
+.seat-row-small {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.row-number-small {
+  width: 20px;
+  margin-right: 10px;
+  font-size: 0.8em;
+  color: #555;
+}
+
+.seats-small {
+  display: flex;
+}
+
+.seat-small {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+
+.available-small {
+  background-color: #e9f7ef;
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+.occupied-small {
+  background-color: #f5f5f5;
+  border: 1px dashed #ccc;
+  color: #777;
+  cursor: default;
+}
+
+.premium-small {
+  background-color: #f0e9ff;
+  border: 1px solid #9b59b6;
+  color: #9b59b6;
+}
+
+.selected-small {
+  background-color: #005EB8;
+  color: white;
+}
+
+.aisle-small {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 12px;
+}
+
+#selected-new-seat {
+  margin-top: 10px;
+  font-weight: bold;
+}
