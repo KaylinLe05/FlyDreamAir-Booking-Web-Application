@@ -1,0 +1,107 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Centered layout container */
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 90vh;
+    padding: 2em 1em;
+    background-color: #f0f0f0;
+}
+
+/* Main content box */
+.summary-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Section titles (e.g., Passenger Summary) */
+.summary-box h2 {
+    background-color: #0078d7;
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    border-radius: 5px 5px 0 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Baggage Options title styled to match */
+.summary-box h3 {
+    background-color: #0078d7;
+    color: white;
+    padding: 10px 15px;
+    margin: 30px 0 15px 0;
+    border-radius: 5px 5px 0 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Group container spacing */
+.summary-group {
+    margin-bottom: 25px;
+}
+
+/* Text within group sections */
+.summary-group p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* Button container centring */
+.confirm-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Primary button style */
+.confirm-button {
+    background-color: #0078d7;
+    color: white;
+    padding: 9px 18px;
+    font-size: 12px;
+    width: 33%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-button:hover {
+    background-color: #005fa3;
+}
+
+/* Baggage options layout */
+.luggage-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Baggage option buttons */
+.luggage-options button {
+    background-color: #0078d7;
+    color: white;
+    padding: 9px 18px;
+    font-size: 12px;
+    width: 33%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.luggage-options button:hover {
+    background-color: #005fa3;
+}
