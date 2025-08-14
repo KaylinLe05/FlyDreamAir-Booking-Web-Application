@@ -1,0 +1,548 @@
+
+    /* Reset default styles */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #ddd;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+		height: 40px;
+		width: auto;
+		transition: transform 0.3s ease;
+	}
+
+	.logo:hover {
+		transform: scale(1.05);
+	}
+
+
+    /* Top Navigation */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Search Box */
+    .search-container {
+      position: relative;
+    }
+
+    .search-box {
+      padding: 8px 30px 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.9em;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      width: 188px;
+      transition: all 0.3s;
+    }
+
+    .search-box:focus {
+      outline: none;
+      border-color: #005EB8;
+      width: 220px;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 18px;
+      width: auto;
+      color: #777;
+    }
+
+    /* Login Dropdown */
+    .login-dropdown {
+      position: relative;
+    }
+
+    .login-btn {
+      background: none;
+      border: none;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.9em;
+      cursor: pointer;
+      padding: 5px 10px;
+      transition: color 0.3s;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .login-btn:hover {
+      color: #005EB8;
+    }
+
+    .login-btn::after {
+      content: "▼";
+      font-size: 10px;
+      margin-left: 5px;
+    }
+
+    .login-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      z-index: 1;
+      right: 0;
+    }
+
+    .login-content a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.85em;
+      transition: background-color 0.2s;
+    }
+
+    .login-content a:hover {
+      background: #003087;
+      color: white;
+    }
+
+    .login-dropdown:hover .login-content {
+      display: block;
+      animation: fadeIn 0.3s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Navigation Tabs */
+    .nav-tabs {
+      background: #003087;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-tabs a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .nav-tabs a.completed {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .nav-tabs a.current {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .nav-tabs a:hover:not(.current) {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .tick-icon {
+      height: 16px;
+      width: auto;
+      margin-right: 8px;
+    }
+
+    /* Main content */
+    .main-content {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .seat-map-container {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    .seat-map-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .flight-info-seat {
+      font-size: 18px;
+      font-weight: 600;
+      color: #005EB8;
+    }
+
+    .seat-legend {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px 25px;
+      margin: 30px 0;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    /* Aircraft Layout */
+    .aircraft-layout {
+      margin-top: 30px;
+    }
+
+    .cockpit {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .cockpit-visual {
+      width: 100px;
+      height: 60px;
+      background-color: #333;
+      border-radius: 50% 50% 0 0;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .cockpit-window {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #555;
+      border-radius: 50%;
+      top: 15px;
+      left: 35px;
+    }
+
+    .cockpit-label {
+      font-size: 13px;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .cabin-class {
+      margin-bottom: 35px;
+    }
+
+    .cabin-title {
+      color: #005EB8;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .seat-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+      align-items: center;
+    }
+
+    .row-number {
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 15px;
+      color: #555;
+    }
+
+    .seats {
+      display: flex;
+      gap: 12px;
+    }
+
+    .seat {
+      width: 42px;
+      height: 42px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    .seat.available {
+      background-color: #e9f7ef;
+      border: 1px solid #2ecc71;
+      color: #2ecc71;
+    }
+
+    .seat.available:hover {
+      background-color: #2ecc71;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .seat.selected {
+      background-color: #005EB8;
+      color: white;
+      border: 1px solid #005EB8;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .seat.occupied {
+      background-color: #f5f5f5;
+      border: 1px dashed #ccc;
+      color: #999;
+      cursor: not-allowed;
+    }
+
+    .seat.premium {
+      background-color: #f0e9ff;
+      border: 1px solid #9b59b6;
+      color: #9b59b6;
+    }
+
+    .seat.premium:hover {
+      background-color: #9b59b6;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .aisle {
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 12px;
+    }
+
+    /* Summary Section */
+    .summary {
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+      border: 1px solid rgba(0, 94, 184, 0.1);
+    }
+
+    .summary h2 {
+      color: #005EB8;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .info-label {
+      font-weight: 600;
+      color: #555;
+    }
+
+    .info-value {
+      font-weight: 600;
+    }
+
+    .divider {
+      border-top: 1px solid #ddd;
+      margin: 25px 0;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-secondary {
+      background-color: #d90000;
+      color: #ffffff;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      color: #333;
+    }
+
+    .btn-secondary:hover {
+      background-color: #b30000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background-color: #d90000;
+      color: #ffffff;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #b30000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 3px 10px rgba(0, 94, 184, 0.3);
+    }
+
+    .btn-primary:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      
+      .logo-container {
+        margin-bottom: 10px;
+      }
+      
+      .top-nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      .search-box {
+        width: 150px;
+      }
+      
+      .nav-tabs {
+        flex-wrap: wrap;
+        padding: 10px 5px;
+        top: 137px;
+      }
+      
+      .nav-tabs a {
+        margin: 5px;
+        font-size: 14px;
+      }
+      
+      .seat-map-container {
+        padding: 20px 15px;
+      }
+      
+      .flight-info-seat {
+        font-size: 16px;
+      }
+      
+      .seat {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+      }
+      
+      .aisle {
+        width: 40px;
+      }
+      
+      .action-buttons {
+        flex-direction: column-reverse;
+        gap: 15px;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .seats {
+        gap: 8px;
+      }
+      
+      .seat {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  
+
+/* Tick image inside nav-tabs */
+.tick-img {
+  height: 18px;
+  width: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
